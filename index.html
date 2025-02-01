@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&effect=outline" rel="stylesheet" type="text/css"> 
+    
+        <style>
+            @font-face {
+                font-family: instruction;
+                src: url(Lekton-Italic.ttf);
+            }
+            body { 
+                background-color: rgba(0, 0, 0, 0); 
+                margin: 0px auto; 
+                overflow: hidden; 
+                font-family: instruction, monospace;
+                font-size: 13px;
+                color: #AFAFAF;
+            }
+
+            .Blink {
+                animation: blinker 1.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
+            }
+
+            @keyframes blinker {  
+                from { opacity: 1; }
+                to { opacity: 0; }
+            }
+
+            .top-right{
+                float: right;
+                width: auto;
+                text-align: right;
+            }
+            
+            .top-right-container{
+                float: right;
+                width: auto;
+                text-align: right;
+                background-color: rgba(0,0,0,0.5);
+                padding: 5px;
+                margin: 10px;
+                border-radius: 10px;
+            }
+
+            .container{
+                width: 100wh;
+                height: 100vh;
+            }
+        </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>XION Bodycam Overlay</title>
+    </head>
+
+    <body>
+        <audio id="beep" autoplay loop>
+            <source src="double-beep.wav" type="audio/wav">
+        </audio>
+        
+        <div class="top-right-container">
+            <div class="top-right">
+                <img src="FIB_logoC.png" width="64" height="64" border="0">
+            </div>
+            <div class="top-right">
+                REC&nbsp;<i class="fa fa-circle text-danger Blink"></i>&nbsp;&nbsp;AXON&nbsp;BODYCAM&trade;&nbsp;&nbsp;<br />
+                <span id="player">XXX</span>
+                <span id="callsign">[000]</span>&nbsp;&nbsp;<br />
+                <span id="agency">XXX</span>&nbsp;&nbsp;<br />                
+                <span style="padding:0px;margin:0px;" id="date-span">00 XXX 0000</span>
+                <span style="padding:0px;margin:0px;" id="time-span">00:00:00</span>
+                <span style="padding:0px;margin:0px;" id="tz">CET</span>&nbsp;&nbsp;
+            </div>
+        </div>
+    </body>
+    
+    <script>
+        //***edit this only for your information***
+        const player = "NATHAN BROOKS";
+        const agency = "FEDERAL INVESTIGATION BUREAU";
+        const callsign = "[0461]";
+        //***        end edit this only         ***
+    
+        const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+
+        function init() {
+            clock();
+        };
+
+        function clock() {
+            const d = new Date();
+            updateTime(d);
+            updateDate(d);
+            $('player', player);
+            $('agency', agency);
+            $('callsign', callsign);
+            setTimeout(clock, 1000);
+        };
+        
+        function updateDate(dt) {
+            const day = dt.getUTCDate();
+            const month = monthNames[dt.getUTCMonth()];
+            const year = dt.getUTCFullYear();
+            const d_str = day + " " + month + " " + year;
+            document.getElementById('date-span').innerHTML = d_str;
+        };
+        
+        function updateTime(dt) {
+            // Convert to CET/CEST (UTC+1 or UTC+2)
+            const isDST = (date) => {
+                const jan = new Date(date.getFullYear(), 0, 1).getTimezoneOffset();
+                const jul = new Date(date.getFullYear(), 6, 1).getTimezoneOffset();
+                return Math.min(jan, jul) !== date.getTimezoneOffset();
+            };
+
+            const offset = isDST(dt) ? 1 : 1; // +2 for CEST, +1 for CET
+            const cetDate = new Date(dt.getTime() + offset * 60 * 60 * 1000);
+            
+            const h = cetDate.getUTCHours().toString().padStart(2, '0');
+            const m = cetDate.getUTCMinutes().toString().padStart(2, '0');
+            const s = cetDate.getUTCSeconds().toString().padStart(2, '0');
+            const t_str = `${h}:${m}:${s}`;
+            document.getElementById('time-span').innerHTML = t_str;
+            document.getElementById('tz').innerHTML = isDST(dt) ? "CEST" : "CET";
+        };
+
+        function $(id, val) {
+            document.getElementById(id).innerHTML = val;
+        };
+
+        window.onload = init;
+    </script>
+
+</html>
