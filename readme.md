@@ -18,6 +18,9 @@ Este overlay muestra:
 - 🔊 Sonido de "beep" mientras graba
 - 🖼️ Logo institucional (editable)
 
+## 🧪 Vista previa
+![Vista previa](https://i.imgur.com/C0PxdxI.mp4)
+
 ---
 
 ## 📁 Archivos importantes
@@ -52,8 +55,8 @@ Marca "Fondo transparente" y ajusta tamaño (ej: 1920x1080).
 - OBS Studio o software de stream que soporte fuentes HTML.
 - Conexión a internet.
 
-🧪 Vista previa
-![Vista previa](https://i.imgur.com/C0PxdxI.mp4)
+
+
 
 
 🛠️ Créditos
