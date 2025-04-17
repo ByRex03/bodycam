@@ -27,7 +27,7 @@ Este overlay muestra:
 ## 📁 Archivos importantes
 
 - `index.html` – El archivo principal que genera el overlay.
-- `FIB_logoC.png` – Logo del FIB (puedes reemplazarlo por el de tu departamento).
+- `logodepartamento.png` – Logo del FIB (puedes reemplazarlo por el de tu departamento).
 - `Lekton-Italic.ttf` – Fuente usada en el diseño.
 
 ---
@@ -55,9 +55,6 @@ Marca "Fondo transparente" y ajusta tamaño (ej: 1920x1080).
 🎯 Requisitos
 - OBS Studio o software de stream que soporte fuentes HTML.
 - Conexión a internet.
-
-
-
 
 
 🛠️ Créditos
