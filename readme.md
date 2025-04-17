@@ -19,7 +19,7 @@ Este overlay muestra:
 - 🖼️ Logo institucional (editable)
 
 ## 🧪 Vista previa
-![Vista previa](https://i.imgur.com/C0PxdxI.mp4)
+![Vista previa](https://i.imgur.com/Aesf7Y8.gif)
 
 
 ---
