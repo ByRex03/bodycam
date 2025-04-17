@@ -21,6 +21,7 @@ Este overlay muestra:
 ## 🧪 Vista previa
 ![Vista previa](https://i.imgur.com/C0PxdxI.mp4)
 
+
 ---
 
 ## 📁 Archivos importantes
