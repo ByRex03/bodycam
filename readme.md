@@ -53,8 +53,8 @@ Marca "Fondo transparente" y ajusta tamaño (ej: 1920x1080).
 - Conexión a internet.
 
 🧪 Vista previa
+![Vista previa](https://i.imgur.com/C0PxdxI.mp4)
 
-https://i.imgur.com/C0PxdxI.mp4
 
 🛠️ Créditos
 Diseñado por [ByRex03]
