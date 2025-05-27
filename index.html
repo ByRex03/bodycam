@@ -110,7 +110,7 @@
             document.getElementById('date-span').innerHTML = d_str;
         };
         
-        function updateTime(dt) {
+   /*     function updateTime(dt) {
             // Convert to CET/CEST (UTC+1 or UTC+2)
             const isDST = (date) => {
                 const jan = new Date(date.getFullYear(), 0, 1).getTimezoneOffset();
@@ -128,7 +128,7 @@
             document.getElementById('time-span').innerHTML = t_str;
             document.getElementById('tz').innerHTML = isDST(dt) ? "CEST" : "CET";
         };
-
+  */
         function $(id, val) {
             document.getElementById(id).innerHTML = val;
         };
