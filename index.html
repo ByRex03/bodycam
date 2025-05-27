@@ -118,7 +118,7 @@
                 return Math.min(jan, jul) !== date.getTimezoneOffset();
             };
 
-            const offset = isDST(dt) ? 1 : 1; // +2 for CEST, +1 for CET
+            const offset = isDST(dt) ? 1 : 2; // +2 para horario de verano CEST, +1 para horario de invierno CET
             const cetDate = new Date(dt.getTime() + offset * 60 * 60 * 1000);
             
             const h = cetDate.getUTCHours().toString().padStart(2, '0');
