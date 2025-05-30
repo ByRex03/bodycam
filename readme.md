@@ -41,7 +41,7 @@ const player = "LOGAN HOLLIDAY";
 const agency = "FEDERAL INVESTIGATION BUREAU";
 const callsign = "[0789]";
 
-📌 Tip: Reemplaza el logo FIB_logoC.png por el de tu agencia y asegúrate de que tenga las mismas dimensiones (64x64px) o ajusta el tamaño en el HTML.
+📌 Tip: Reemplaza el logo logodepartamento.png por el de tu agencia y asegúrate de que tenga las mismas dimensiones (64x64px) o ajusta el tamaño en el HTML.
 
 🚀 Cómo usarlo
 Clona o descarga este repositorio.
